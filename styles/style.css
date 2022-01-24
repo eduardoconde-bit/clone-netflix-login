@@ -1,0 +1,260 @@
+@charset 'utf-8';
+
+@font-face {
+    font-family: "DM sans";
+    src: url("../fonts/DMSans-Regular.ttf") format(truetype);
+    src: url("../fonts/DMSans-Bold.ttf") format(truetype);
+}
+
+:root {
+    /*variáveis CSS*/
+    --font-page: "DM sans", Helvetica, sans-serif;
+    --font-alert: Helvetica, sans-serif;
+    --red-netflix: #e50914;
+    --color-text: #757575;
+    --color-highlight: rgb(188, 188, 188);
+    --background-input: #383838;
+    --msg-error: #ffae00;
+    --backgroud-series: url("../images/netflix-background-page.jpg");
+}
+
+* {
+    /*Reset CSS*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    overflow: auto;
+}
+
+body {
+    height: 100%;
+    font-family: var(--font-page);
+    background-color: #000000;
+    color: var(--color-text);
+    overflow: auto;
+}
+
+.highlight-items-color {
+    color: var(--color-highlight);
+}
+
+a {
+    color: var(--color-highlight);
+}
+a:hover {
+    text-decoration: underline;
+}
+
+.wrapper-background-color {
+    height: 100%;
+}
+
+#logo-netflix {
+    margin: 20px 0 20px 5%;
+    width: 100px;
+}
+
+h1 {
+    margin-bottom: 10px;
+    font-size: 2em;
+    font-weight: bolder;
+    color: #ffffff;
+}
+
+#content-main-page {
+    margin: 10px 5% 50px;
+}
+
+.position-input {
+    background-color: var(--background-input);
+    color: #ffffff;
+    font-size: 0.9em;
+    display: block;
+    margin: 15px auto 0;
+    padding: 0 20px;
+    width: 100%;
+    height: 45px;
+    overflow: auto;
+    border: none;
+    border-radius: 5px;
+}
+/*Retira as "bordas" de <input> padrão (box shadow + outline) de alguns navegadores*/
+.position-input:focus {
+    border: 2px solid var(--color-highlight);
+    outline: 0;
+    box-shadow: 0 0 0 0;
+}
+
+button#button-action {
+    background-color: var(--red-netflix);
+    color: #ffffff;
+    font: bold 1.1em var(--font-page);
+    display: block;
+    margin: 40px auto 0;
+    height: 40px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+}
+
+button#button-action:focus {
+    border: 2px solid var(--color-highlight);
+    outline: 0;
+    box-shadow: 0 0 0 0;
+}
+
+.after-button-flex-container {
+    font-size: 0.8em;
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.after-button-flex-container > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-remember-me {
+    margin-left: 5px;
+}
+
+#alternative-login-create-account {
+    margin-top: 50px;
+}
+
+#wrapper-facebook-login {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#facebook-icon {
+    height: 20px;
+    width: 20px;
+}
+
+#facebook-login {
+    font-size: 0.8em;
+    display: block;
+    margin-left: 7px;
+}
+
+.footer-wrapper {
+    font-size: 0.9em;
+    padding: 0% 4% 0% 4%;
+    border-top: 1px solid var(--color-text);
+}
+
+.wrapper-footer-interno {
+    max-width: 799px;
+    margin: auto;
+}
+
+p#footer-help-number {
+    display: inline-block;
+    font-size: 18px;
+    margin: 20px 0 20px;
+}
+
+.group-links-footer {
+    margin: 20px auto 20px;
+    max-height: 350px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.group-links-footer > li {
+    margin: 10px 0;
+    width: 175px;
+}
+/*Adapta o link de ajuda da area de login para mobile <= 320px*/
+@media only screen and (max-width: 290px) {
+    .after-button-flex-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .position-input {
+        font-size: 0.9em;
+    }
+
+    .help-area-login {
+        margin-top: 10px;
+    }
+
+    .footer-wrapper {
+        font-size: 0.9em;
+        padding: 10px;
+    }
+
+    p#footer-help-number {
+        font-size: 15px;
+    }
+}
+/*Exibição tablet e desktop*/
+@media only screen and (min-width: 701px) {
+    body {
+        min-height: 100vh;
+        position: relative;
+        background: #000 var(--backgroud-series) center center;
+        background-size: cover;
+        overflow: hidden;
+    }
+
+    #logo-netflix {
+        width: 180px;
+        margin: 20px 0 20px 30px;
+    }
+
+    .wrapper-background-color {
+        background-color: #00000099;
+        min-height: 100vh;
+    }
+
+    #content-main-page {
+        background-color: #000000b3;
+        max-width: 450px;
+        margin: 0 auto 0;
+        padding: 70px 60px 120px;
+        border-radius: 7px;
+    }
+
+    #content-main-login-page {
+        padding: 0px;
+    }
+
+    footer {
+        background-color: #000000e6;
+        width: 100%;
+    }
+
+    .footer-wrapper {
+        background-color: none;
+        margin-top: 0px;
+        border: none;
+    }
+
+    .wrapper-footer-interno {
+        max-width: 799px;
+    }
+
+    .group-links-footer > li {
+        width: 200px;
+    }
+}
+
+@media screen and (max-height: 720px) and (min-width: 701px) {
+    #content-main-page {
+        margin-bottom: 50px;
+    }
+}

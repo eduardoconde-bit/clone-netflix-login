@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../styles/style.css" />
+        <link rel="shortcut icon" href="../images/netflix-icon-page.png" type="image/x-icon" />
+        <title>Netflix</title>
+    </head>
+
+    <body>
+        <div class="wrapper-background-color">
+            <header>
+                <a href="#"><img id="logo-netflix" src="../images/netflix-logo.svg" alt="logo do netflix" /></a>
+            </header>
+            <main>
+                <section id="content-main-page">
+                    <h1>Entrar</h1>
+                    <section id="content-main-login-page">
+                        <section id="form-login">
+                            <input id="input-login" class="position-input" type="text" placeholder="email ou número de telefone" required />
+                            <div id="msg-container-login"></div>
+                            <!--Javascript create?-->
+                            <input id="input-password" class="position-input" type="password" placeholder="senha" />
+                            <div id="msg-container-password"></div>
+                            <!--Javascript create?-->
+                            <button id="button-action">Entrar</button>
+                            <div class="after-button-flex-container">
+                                <div>
+                                    <input id="remember-me" type="checkbox" checked />
+                                    <label class="text-remember-me highlight-items-color" for="remember-me">Lembre-se de mim</label>
+                                </div>
+                                <a class="help-area-login" href="#">Precisa de ajuda?</a>
+                            </div>
+                        </section>
+                        <section id="alternative-login-create-account">
+                            <div id="wrapper-facebook-login">
+                                <img id="facebook-icon" src="../images/facebook-login.png" alt="ícone facebook" />
+                                <a id="facebook-login" href="#">Conectar com facebook</a>
+                            </div>
+                            <p>Novo por aqui? <a id="sign-up" href="#">Assine agora</a></p>
+                        </section>
+                    </section>
+                </section>
+            </main>
+            <!---->
+        </div>
+        <footer>
+            <div class="footer-wrapper">
+                <div class="wrapper-footer-interno">
+                    <p id="footer-help-number">Dúvidas? Ligue <a href="tel:0800-761-4631">0800-761-4631</a></p>
+                    <nav>
+                        <ul class="group-links-footer">
+                            <li><a href="#">Perguntas Frequentes</a></li>
+                            <li><a href="#">Centro de ajuda</a></li>
+                            <li><a href="#">Termos de uso</a></li>
+                            <li><a href="#">Privacidade</a></li>
+                            <li><a href="#">Preferências de cookies</a></li>
+                            <li><a href="#">Informações corporativas</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </footer>
+
+        <script type="text/javascript" src="../scripts/script.js"></script>
+    </body>
+</html>
