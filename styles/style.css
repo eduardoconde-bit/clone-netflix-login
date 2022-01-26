@@ -10,6 +10,7 @@
     /*variáveis CSS*/
     --font-page: "DM sans", Helvetica, sans-serif;
     --font-alert: Helvetica, sans-serif;
+    --background-highlight: #000000bb;
     --red-netflix: #e50914;
     --color-text: #757575;
     --color-highlight: rgb(188, 188, 188);
@@ -26,6 +27,10 @@
     text-decoration: none;
     list-style: none;
     overflow: auto;
+}
+
+html {
+    height: 100%;
 }
 
 body {
@@ -47,11 +52,11 @@ a:hover {
     text-decoration: underline;
 }
 
-.wrapper-background-color {
+.wrapper-content-no-footer {
     height: 100%;
 }
 
-#logo-netflix {
+.logo-netflix {
     margin: 20px 0 20px 5%;
     width: 100px;
 }
@@ -75,7 +80,7 @@ h1 {
     margin: 15px auto 0;
     padding: 0 20px;
     width: 100%;
-    height: 45px;
+    height: 50px;
     overflow: auto;
     border: none;
     border-radius: 5px;
@@ -93,8 +98,8 @@ button#button-action {
     font: bold 1.1em var(--font-page);
     display: block;
     margin: 40px auto 0;
-    height: 40px;
     width: 100%;
+    height: 50px;
     border: none;
     border-radius: 5px;
 }
@@ -129,15 +134,15 @@ button#button-action:focus {
 }
 
 #wrapper-facebook-login {
-    margin-bottom: 10px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    margin-bottom: 10px;
 }
 
 #facebook-icon {
-    height: 20px;
     width: 20px;
+    height: 20px;
 }
 
 #facebook-login {
@@ -158,24 +163,24 @@ button#button-action:focus {
 }
 
 p#footer-help-number {
-    display: inline-block;
     font-size: 18px;
+    display: inline-block;
     margin: 20px 0 20px;
 }
 
 .group-links-footer {
-    margin: 20px auto 20px;
-    max-height: 350px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    margin: 20px auto 20px;
+    max-height: 350px;
 }
 
 .group-links-footer > li {
-    margin: 10px 0;
     width: 175px;
+    margin: 10px 0;
 }
 /*Adapta o link de ajuda da area de login para mobile <= 320px*/
 @media only screen and (max-width: 290px) {
@@ -204,38 +209,44 @@ p#footer-help-number {
 /*Exibição tablet e desktop*/
 @media only screen and (min-width: 701px) {
     body {
-        min-height: 100vh;
-        position: relative;
         background: #000 var(--backgroud-series) center center;
         background-size: cover;
-        overflow: hidden;
+        overflow: auto;
     }
 
-    #logo-netflix {
+    .logo-netflix {
         width: 180px;
         margin: 20px 0 20px 30px;
     }
+    /*Conteiner parent de todo conteúdo da página para posicionar footer no final
+    * da página (conteúdo pequeno e footer height dinâmico)
+    */
+    .wrapper-total-content {
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+    }
 
-    .wrapper-background-color {
-        background-color: #00000099;
-        min-height: 100vh;
+    .wrapper-content-no-footer {
+        flex: 1;
     }
 
     #content-main-page {
-        background-color: #000000b3;
+        background-color: var(--background-highlight);
         max-width: 450px;
-        margin: 0 auto 0;
-        padding: 70px 60px 120px;
+        margin: auto;
+        padding: 50px 70px 150px;
         border-radius: 7px;
     }
 
-    #content-main-login-page {
-        padding: 0px;
-    }
-
+    /*Segundo Elemento do Container flex*/
     footer {
-        background-color: #000000e6;
+        background-color: var(--background-highlight);
+        flex: 1;
         width: 100%;
+        max-height: 200px;
+        margin-top: 50px;
     }
 
     .footer-wrapper {
@@ -250,11 +261,5 @@ p#footer-help-number {
 
     .group-links-footer > li {
         width: 200px;
-    }
-}
-
-@media screen and (max-height: 720px) and (min-width: 701px) {
-    #content-main-page {
-        margin-bottom: 50px;
     }
 }
