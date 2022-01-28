@@ -85,6 +85,7 @@ h1 {
     border: none;
     border-radius: 5px;
 }
+
 /*Retira as "bordas" de <input> padrão (box shadow + outline) de alguns navegadores*/
 .position-input:focus {
     border: 2px solid var(--color-highlight);
@@ -182,6 +183,7 @@ p#footer-help-number {
     width: 175px;
     margin: 10px 0;
 }
+
 /*Adapta o link de ajuda da area de login para mobile <= 320px*/
 @media only screen and (max-width: 290px) {
     .after-button-flex-container {
@@ -206,6 +208,7 @@ p#footer-help-number {
         font-size: 15px;
     }
 }
+
 /*Exibição tablet e desktop*/
 @media only screen and (min-width: 701px) {
     body {
@@ -218,6 +221,7 @@ p#footer-help-number {
         width: 180px;
         margin: 20px 0 20px 30px;
     }
+
     /*Conteiner parent de todo conteúdo da página para posicionar footer no final
     * da página (conteúdo pequeno e footer height dinâmico)
     */
